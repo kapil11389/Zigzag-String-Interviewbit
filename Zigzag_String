@@ -1,0 +1,17 @@
+string Solution::convert(string s, int numRows) {
+     if(numRows==1)
+           return s;
+        int div=numRows-1;
+        string ans;
+        for(int i=0;i<numRows;i++)
+        {
+            int j=i;
+            while(j<s.length())
+            {
+                ans+=s[j];
+                j=j+2*(numRows-(j%div+1));
+            }
+        }
+        return ans;
+}
+
